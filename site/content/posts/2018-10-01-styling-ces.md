@@ -12,8 +12,9 @@ series:
   - Web components
 ---
 
+<script src="/js/2018-10-01-styling-ces/ces.js"></script>
+
 In a previous post, I laid out some of the basics of custom elements. If you didn't get a chance to read it and don't really understand custom elements, I'd recommend checking it out first before continuing on: [Making the Case for Custom Elements]({{< ref "./2018-09-04-ces.md" >}}). It's a quick read, and helps set the foundation for this post.
-Note: For the demos to function, it's highly recommended you run this in a browser that currently supports custom elements.
 
 **Note:** For the demos to function, it's highly recommended you run this in a [browser that currently supports custom elements](https://caniuse.com/#feat=custom-elementsv1).
 
@@ -62,42 +63,9 @@ class FooBarElement extends HTMLElement {
 customElements.define("foo-bar", FooBarElement);
 ```
 
-<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;">
+<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;background-color:gray;">
 	<foo-bar1><div>I'm the slot</div></foo-bar1>
 </div>
-
-<script>
-const template = document.createElement('template');
-template.innerHTML = `
-    <style>
-      :host {
-        display: inline-block;
-        margin: 0 auto;
-        box-shadow: 0 0 10px rgba(128, 100, 38, 0.34);
-        border-radius: 8px;
-        border: 2px dashed hotpink;
-      }
-
-      span {
-          color: black;
-          font-family: "Comic Sans MS", cursive, sans-serif;
-      }
-    </style>
-
-    <span>Hello, world!</span>
-    <slot></slot>
-
-`;
-
-class FooBarElement extends HTMLElement {
-constructor() {
-super();
-this.attachShadow({ mode: 'open' });
-this.shadowRoot.appendChild(template.content.cloneNode(true));
-}
-}
-
-customElements.define('foo-bar1', FooBarElement);</script>
 
 Now, this is a pretty basic element. And rather ugly at that. I want it to have a background color! And I want the text to be a different color. And what sick freak uses Comic Sans?! That has GOT to go.
 
@@ -118,7 +86,7 @@ Now, this is a pretty basic element. And rather ugly at that. I want it to have 
         background-color: hotpink;
     }
 </style>
-<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;">
+<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;background-color:gray;">
 	<foo-bar1 class="foo-bar-class"><div>I'm the slot</div></foo-bar1>
 </div>
 
@@ -165,8 +133,22 @@ Without further ado, here's what our example would look like if we had some semb
 
 ```javascript
 const template = document.createElement("template");
-template.innerHTML =
-  '<style>:host{display:inline-block;margin:0 auto;box-shadow:0 0 10px rgba(128,100,38,.34);border-radius:8px;border:2px dashed;border-color:hotpink}span{color:black;font-family:var(--foo-bar-span-font,"Comic Sans MS",cursive,sans-serif)}</style><span>Hello,world!</span><slot></slot>';
+template.innerHTML = `<style>
+  :host {
+    display: inline-block;
+    margin: 0 auto;
+    box-shadow: 0 0 10px rgba(128, 100, 38, .34);
+    border-radius: 8px;
+    border: 2px dashed;
+    border-color: hotpink
+  }
+
+  span {
+    color: black;
+    font-family: var(--foo-bar-span-font, "Comic Sans MS", cursive, sans-serif)
+  }
+</style><span>Hello,world!</span>
+<slot></slot>`;
 
 class FooBarElement extends HTMLElement {
   constructor() {
@@ -204,23 +186,9 @@ customElements.define("foo-bar", FooBarElement);
         background-color: hotpink;
     }
 </style>
-<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;">
-    <foo-bar3><div>I'm the slot</div><p>I'm the slotted paragraph element!</p></foo-bar2>
+<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;background-color:gray;">
+    <foo-bar2><div>I'm the slot</div><p>I'm the slotted paragraph element!</p></foo-bar2>
 </div>
-<script>
-    const template2 = document.createElement('template');
-template2.innerHTML = '<style>:host{display:inline-block;margin:0 auto;box-shadow:0 0 10px rgba(128,100,38,.34);border-radius:8px;border:2px dashed;border-color:hotpink}span{color:black;font-family:var(--foo-bar-span-font,"Comic Sans MS",cursive,sans-serif)}::slotted(p){background-color:purple;color:white!important}</style><span>Hello,world!</span><slot></slot>';
-    
-class FooBar3Element extends HTMLElement {
-  constructor() {
-    super(); 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template3.content.cloneNode(true));
-  }
-}
-
-customElements.define('foo-bar3', FooBar3Element);
-</script>
 Woo! We did it; no more pesky Comic Sans! But... can I style the LightDOM from the custom element? Why yes, curious reader, you can!
 
 ## Styling the slot
@@ -267,23 +235,9 @@ customElements.define("foo-bar", FooBarElement);
         background-color: hotpink;
     }
 </style>
-<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;">
-    <foo-bar3><div>I'm the slot</div><p>I'm the slotted paragraph element!</p></foo-bar2>
+<div style="border: 1px solid gray;height: 150px;display:flex;align-items:center;margin-bottom:20px;background-color:gray;">
+    <foo-bar3><div>I'm the slot</div><p>I'm the slotted paragraph element!</p></foo-bar3>
 </div>
-<script>
-    const template3 = document.createElement('template');
-template3.innerHTML = '<style>:host {display: inline-block;margin: 0 auto;box-shadow: 0 0 10px rgba(128, 100, 38, 0.34);border-radius: 8px;border: 2px dashed;border-color: hotpink;}span {color: black;font-family: var(--foo-bar-span-font, "Comic Sans MS", cursive, sans-serif);}::slotted(p) {background-color: purple;color: white !important;}</style><span>Hello, world!</span><slot></slot>';
-    
-class FooBar3Element extends HTMLElement {
-  constructor() {
-    super(); 
-    this.attachShadow({ mode: 'open' });
-    this.shadowRoot.appendChild(template3.content.cloneNode(true));
-  }
-}
-
-customElements.define('foo-bar3', FooBar3Element);
-</script>
 
 And that's it! That's the basics of styling your custom elements.
 
