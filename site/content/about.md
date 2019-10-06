@@ -10,6 +10,4 @@ My name is Patrick O'Brien. I am a software engineer at a development company in
 
 In my spare time, I enjoy reading other blog posts, playing around with new technologies, and play more video games than I probably should.
 
-Check out my [first post]({{< ref "./posts/2017-05-29-hello-world.md" >}}) for more details!
-
 [GitHub](https://github.com/p-ob/)
