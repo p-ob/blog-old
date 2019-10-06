@@ -87,7 +87,7 @@ disableHugoGeneratorInject = false
 
   [[params.social]]
     name = "email"
-    url  = "mailto:patrick.obrien91@protonmail.com"
+    url  = "mailto:patrickobrien@pob.dev "
 
   [[params.social]]
     name = "github"
