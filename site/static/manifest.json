@@ -1,0 +1,8 @@
+{
+  "short_name": "POB",
+  "name": "POB Blog",
+  "background_color": "#a9a9b3",
+  "display": "standalone",
+  "theme_color": "#a9a9b3",
+  "start_url": "/"
+}

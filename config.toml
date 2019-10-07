@@ -1,0 +1,91 @@
+title = "POB"
+baseURL = "/"
+theme = "hermit"
+languageCode = "en-us"
+languageLang = "en"
+googleanalytics = ""
+disqusShortname = "p-ob"
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+rssLimit = 10
+
+PygmentsCodeFences = true
+PygmentsStyle = "monokai"
+
+copyright = "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License." # This message is only used by the RSS template.
+
+archetypeDir = "site/archetypes"
+contentDir   = "site/content"
+dataDir      = "site/data"
+layoutDir    = "site/layouts"
+publishDir   = "dist"
+themesDir    = "site/themes"
+
+buildDrafts  = false
+buildFuture  = false
+buildExpored = false
+canonifyURLs = true
+code_copy_button = true
+
+enableRobotsTXT = true
+enableGitInfo   = false
+enableEmoji     = true
+enableMissingTranslationPlaceholders = false
+disableRSS     = false
+disableSitemap = false
+disable404     = false
+disableHugoGeneratorInject = false
+
+[author]
+  name = "Patrick O'Brien"
+
+[blackfriday]
+  hrefTargetBlank = true
+
+[taxonomies]
+  tag      = "tags"
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Integrate Javascript files or stylesheets by adding the url to the external assets or by
+  # linking local files with their path relative to the static folder, e.g. "css/styles.css"
+  customCSS = []
+  customJS  = []
+
+  # Toggle this option need to rebuild SCSS, requires extended version of Hugo
+  justifyContent = false  # Set "text-align: justify" to .content.
+
+  themeColor = "#494f5c"
+
+  # Social icons
+  [[params.social]]
+    name = "twitter"
+    url  = "https://twitter.com/p_ob91"
+
+  [[params.social]]
+    name = "email"
+    url  = "mailto:patrickobrien@pob.dev "
+
+  [[params.social]]
+    name = "github"
+    url  = "https://github.com/p-ob"
+
+  [[params.social]]
+    name = "linkedin"
+    url  = "https://www.linkedin.com/in/p-ob"
+
+[menu]
+
+  [[menu.main]]
+    name = "Posts"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "About"
+    url = "about/"
+    weight = 20
