@@ -2,14 +2,11 @@
 author:
   name: "Patrick O'Brien"
 date: 2018-10-01
-linktitle: Styling Custom Elements
-type:
-  - post
-  - posts
 title: Styling Custom Elements
-weight: 10
-series:
-  - Web components
+tags:
+  - post
+  - webcomponents
+  - frontend
 ---
 
 <script src="/js/2018-10-01-styling-ces/ces.js"></script>

@@ -2,14 +2,10 @@
 author:
   name: "Patrick O'Brien"
 date: 2017-05-29
-linktitle: Hello world!
-type:
-  - post
-  - posts
 title: Hello world!
-weight: 10
-series:
-  - pob
+tags:
+  - post
+  - general
 ---
 
 I'm not really a big fan of these first time posts. This is typically just fluff to act as a nice starting bookend for the posts to follow. But, some of you readers might be curious to know a little about me, so here goes.
