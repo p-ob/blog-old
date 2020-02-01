@@ -1,10 +1,11 @@
-+++
-title = "About me"
-date = "2019-08-5"
-aliases = ["about-me","contact"]
-[ author ]
-  name = "Patrick O'Brien"
-+++
+---
+title: About me
+date: 2019-08-05
+permalink: /about/index.html
+navtitle: About
+tags:
+  - nav
+---
 
 My name is Patrick O'Brien. I am a software engineer at a development company in Milwaukee, WI. There, I work as the lead of a small team to develop SaaS-based products using the .NET Framework and modern web development technologies, most recently tinkering with web components.
 
