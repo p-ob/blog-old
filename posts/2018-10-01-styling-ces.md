@@ -7,6 +7,7 @@ tags:
   - post
   - webcomponents
   - frontend
+summary: "Custom CSS properties + Shadow DOM = <3"
 ---
 
 <script src="/js/2018-10-01-styling-ces/ces.js"></script>
@@ -39,7 +40,7 @@ template.innerHTML = `
         border: 2px dashed;
         border-color: hotpink;
       }
-      
+
       span {
           color: black;
           font-family: "Comic Sans MS", cursive, sans-serif;

@@ -6,6 +6,7 @@ title: Hello world!
 tags:
   - post
   - general
+summary: "Short introduction to who I am"
 ---
 
 I'm not really a big fan of these first time posts. This is typically just fluff to act as a nice starting bookend for the posts to follow. But, some of you readers might be curious to know a little about me, so here goes.
