@@ -11,4 +11,5 @@
     {% include "assets/js/inline.js" %}
   {% endset %}
   <script>{{ js | jsmin | safe }}</script>
+  <script type="module" src="/static/js/mwc-dist.js" async></script>
 </head>

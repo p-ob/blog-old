@@ -1,11 +1,34 @@
 ---
 layout: layouts/base.njk
-section: blog
-permalink: /blog/index.html
+section: home
+permalink: /index.html
 ---
 <h1>{{ title }}</h1>
 
-{{ layoutContent | safe }}
+<div>
+Hi, I'm Patrick. blah blah blah here's a fun fact and my GitHub and other links!
+</div>
+<div>
+<mwc-button outlined label="Learn more"></mwc-button>
+</div>
 
-{% set postslist = collections.posts %}
-{% include "components/postslist.njk" %}
+<div class="featured-cards">
+    <div class="featured-card">
+        <div class="accent"></div>
+        <div class="contents">
+        </div>
+        <mwc-button outlined class="details" label="Details"></mwc-button>
+    </div>
+    <div class="featured-card">
+        <div class="accent"></div>
+        <div class="contents">
+        </div>
+        <mwc-button outlined class="details" label="Details"></mwc-button>
+    </div>
+    <div class="featured-card">
+        <div class="accent"></div>
+        <div class="contents">
+        </div>
+        <mwc-button outlined class="details" label="Details"></mwc-button>
+    </div>
+</div>

@@ -4,19 +4,19 @@
 	{% include "components/head.njk" %}
 
 	<body>
+		<mwc-top-app-bar-fixed id="bar">
+			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
+			<a slot="actionItems" href="{{ '/' | url }}">Talks<a>
+			<a slot="actionItems" href="{{ '/' | url }}">Projects<a>
+			<a slot="actionItems" href="{{ '/' | url }}">Blog<a>
+			<a slot="actionItems" href="{{ '/' | url }}">About<a>
+			<a slot="actionItems" href="{{ '/' | url }}">Contact<a>
+			<main>
+				{{ layoutContent | safe }}
+			</main>
 
-		<header>
-			<h1>
-				<a href="{{ '/' | url }}">{{ metadata.title }}</a>
-			</h1>
-			{% include "components/nav.njk" %}
-		</header>
-
-		<main>
-			{{ layoutContent | safe }}
-		</main>
-
-		{% include "components/footer.njk" %}
+			{% include "components/footer.njk" %}
+		</mwc-top-app-bar-fixed>
 
 	</body>
 

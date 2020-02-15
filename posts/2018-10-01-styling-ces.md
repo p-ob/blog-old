@@ -10,7 +10,7 @@ tags:
 summary: "Custom CSS properties + Shadow DOM = <3"
 ---
 
-<script src="/js/2018-10-01-styling-ces/ces.js"></script>
+<script src="/static/js/2018-10-01-styling-ces/ces.js"></script>
 
 In a previous post, I laid out some of the basics of custom elements. If you didn't get a chance to read it and don't really understand custom elements, I'd recommend checking it out first before continuing on: [Making the Case for Custom Elements]({{< ref "./2018-09-04-ces.md" >}}). It's a quick read, and helps set the foundation for this post.
 

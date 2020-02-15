@@ -3,6 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "parcel": "parcel build mwc-packager.js -d static/js -o mwc-dist.js",
     "build": "eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
@@ -23,9 +24,13 @@
     "@11ty/eleventy": "^0.9.0",
     "luxon": "^1.21.3",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5"
+    "markdown-it-anchor": "^5.2.5",
+    "parcel": "^1.12.4"
   },
   "dependencies": {
+    "@material/mwc-button": "^0.13.0",
+    "@material/mwc-dialog": "^0.13.0",
+    "@material/mwc-top-app-bar-fixed": "^0.13.0",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",
     "uglify-es": "^3.3.9"
