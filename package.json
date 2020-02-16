@@ -6,7 +6,7 @@
     "build": "parcel build mwc-packager.js -d static/js -o mwc-dist.js && eleventy",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
-    "debug": "DEBUG=* npx eleventy"
+    "debug": "set DEBUG=* & eleventy"
   },
   "repository": {
     "type": "git",
