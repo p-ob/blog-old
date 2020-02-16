@@ -867,6 +867,24 @@
   dependencies:
     tslib "^1.9.3"
 
+"@material/drawer@=5.0.0-canary.a1a0deb3e.0":
+  version "5.0.0-canary.a1a0deb3e.0"
+  resolved "https://registry.yarnpkg.com/@material/drawer/-/drawer-5.0.0-canary.a1a0deb3e.0.tgz#04722e58775c5e72dae62e836215b9c446c22558"
+  integrity sha512-edPoZXR8EDx6n+JujgTebvqdLuld/iWnecaKS7yHwqZKsK5qyBJRrsLxY5sq9kAj87TcHGjZypEFg9viujaVBw==
+  dependencies:
+    "@material/animation" "5.0.0-canary.a1a0deb3e.0"
+    "@material/base" "5.0.0-canary.a1a0deb3e.0"
+    "@material/dom" "5.0.0-canary.a1a0deb3e.0"
+    "@material/elevation" "5.0.0-canary.a1a0deb3e.0"
+    "@material/feature-targeting" "5.0.0-canary.a1a0deb3e.0"
+    "@material/list" "5.0.0-canary.a1a0deb3e.0"
+    "@material/ripple" "5.0.0-canary.a1a0deb3e.0"
+    "@material/rtl" "5.0.0-canary.a1a0deb3e.0"
+    "@material/shape" "5.0.0-canary.a1a0deb3e.0"
+    "@material/theme" "5.0.0-canary.a1a0deb3e.0"
+    "@material/typography" "5.0.0-canary.a1a0deb3e.0"
+    tslib "^1.9.3"
+
 "@material/elevation@5.0.0-canary.a1a0deb3e.0":
   version "5.0.0-canary.a1a0deb3e.0"
   resolved "https://registry.yarnpkg.com/@material/elevation/-/elevation-5.0.0-canary.a1a0deb3e.0.tgz#2ca5bbb4c4d03077a9fa9e5f99f51b12bd6597f9"
@@ -881,6 +899,34 @@
   version "5.0.0-canary.a1a0deb3e.0"
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-5.0.0-canary.a1a0deb3e.0.tgz#6e3f830877bb27ce9c032a720c4be073da733a0d"
   integrity sha512-TP1vvgH2ydFZwuKT2uWgv9ZC4E00J4qTqpVw1cpH2SiAd8V1dkEC9Kz6q8bY6k/6j+dK0Kl0vqHvjz2AL+2HZw==
+
+"@material/icon-button@=5.0.0-canary.a1a0deb3e.0":
+  version "5.0.0-canary.a1a0deb3e.0"
+  resolved "https://registry.yarnpkg.com/@material/icon-button/-/icon-button-5.0.0-canary.a1a0deb3e.0.tgz#0b06f0d3e924dc2d6d178e3c6e2cff571a25949b"
+  integrity sha512-g5lN2zVovaF2w4FYJatcmsPVYLO42ZWLWXYzu5EbktbIOxVGp0N+NYOUhb6HKm8/pjPnqn7ZZGoiqC5NCn2JRA==
+  dependencies:
+    "@material/base" "5.0.0-canary.a1a0deb3e.0"
+    "@material/density" "5.0.0-canary.a1a0deb3e.0"
+    "@material/feature-targeting" "5.0.0-canary.a1a0deb3e.0"
+    "@material/ripple" "5.0.0-canary.a1a0deb3e.0"
+    "@material/theme" "5.0.0-canary.a1a0deb3e.0"
+    tslib "^1.9.3"
+
+"@material/list@5.0.0-canary.a1a0deb3e.0":
+  version "5.0.0-canary.a1a0deb3e.0"
+  resolved "https://registry.yarnpkg.com/@material/list/-/list-5.0.0-canary.a1a0deb3e.0.tgz#3ae31a223abbff562cbfea9292abbc2bd6a210ab"
+  integrity sha512-9+Xn17SspJCvG7xVQZS6hWlCpsl8NqkbkCLsufmruSInm0hZ8QmBITvbF1pXdSOo+TyK3ubppFEaznqovwMfwA==
+  dependencies:
+    "@material/base" "5.0.0-canary.a1a0deb3e.0"
+    "@material/density" "5.0.0-canary.a1a0deb3e.0"
+    "@material/dom" "5.0.0-canary.a1a0deb3e.0"
+    "@material/feature-targeting" "5.0.0-canary.a1a0deb3e.0"
+    "@material/ripple" "5.0.0-canary.a1a0deb3e.0"
+    "@material/rtl" "5.0.0-canary.a1a0deb3e.0"
+    "@material/shape" "5.0.0-canary.a1a0deb3e.0"
+    "@material/theme" "5.0.0-canary.a1a0deb3e.0"
+    "@material/typography" "5.0.0-canary.a1a0deb3e.0"
+    tslib "^1.9.3"
 
 "@material/mwc-base@^0.13.0":
   version "0.13.0"
@@ -920,6 +966,31 @@
     lit-html "^1.1.2"
     tslib "^1.10.0"
     wicg-inert "^3.0.0"
+
+"@material/mwc-drawer@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-drawer/-/mwc-drawer-0.13.0.tgz#a08e3d73fd95c94c95d88e3d1a8a003961d82a28"
+  integrity sha512-B9k/8dtqbncBuPyxGQE27J4N6GXh/orSaZqMXHumaxyk8dD1g3G0gFF7ZefKZj0grrG5ZER/lcHek3lZz1IMuA==
+  dependencies:
+    "@material/drawer" "=5.0.0-canary.a1a0deb3e.0"
+    "@material/mwc-base" "^0.13.0"
+    blocking-elements "^0.1.0"
+    lit-element "^2.2.1"
+    lit-html "^1.1.2"
+    tslib "^1.10.0"
+    wicg-inert "^3.0.0"
+
+"@material/mwc-icon-button@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-icon-button/-/mwc-icon-button-0.13.0.tgz#0d6382ee4cd4c2dd7e84c12d899e3c2cb411f9ab"
+  integrity sha512-txgK6+51u3Upp394WUiZr0Yf6tUfruSNFloBRmGY0ekUIimsbSCcFyvhjA4UTFaIgroxdtULnr7qT4K3Kh2IbQ==
+  dependencies:
+    "@material/icon-button" "=5.0.0-canary.a1a0deb3e.0"
+    "@material/mwc-base" "^0.13.0"
+    "@material/mwc-icon" "^0.13.0"
+    "@material/mwc-ripple" "^0.13.0"
+    lit-element "^2.2.1"
+    tslib "^1.10.0"
 
 "@material/mwc-icon@^0.13.0":
   version "0.13.0"

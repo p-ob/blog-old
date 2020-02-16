@@ -5,10 +5,18 @@
 
 	<body>
 		<mwc-top-app-bar-fixed id="bar">
+			<mwc-icon-button id="menuButton" icon="menu" slot="navigationIcon"></mwc-icon-button>
 			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
 			{%- for nav in collections.nav | sort(attribute="date") -%}
 			<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
 			{%- endfor -%}
+			<mwc-drawer id="menuDrawer" type="dismissible">
+				{%- for nav in collections.nav | sort(attribute="date") -%}
+				<div>
+				<a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
+				</div>
+				{%- endfor -%}
+			</mwc-drawer>
 			<section class="content">
 				<main>
 					{{ layoutContent | safe }}
@@ -16,5 +24,14 @@
 				{% include "components/footer.njk" %}
 			</section>
 		</mwc-top-app-bar-fixed>
+		<script>
+		const appBar = document.getElementById("bar")
+		const menuDrawer = document.getElementById("menuDrawer");
+		if (appBar && menuDrawer) {
+		appBar.addEventListener("MDCTopAppBar:nav", () => {
+			menuDrawer.open = !menuDrawer.open;
+		});
+		}
+		</script>
 	</body>
 </html>
