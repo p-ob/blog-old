@@ -2,6 +2,7 @@ const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -86,6 +87,8 @@ module.exports = function(eleventyConfig) {
     "md",
     markdownIt(options).use(markdownItAnchor, opts)
   );
+
+  eleventyConfig.addPlugin(syntaxHighlight);
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
