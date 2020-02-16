@@ -3,14 +3,8 @@ layout: layouts/base.njk
 section: home
 permalink: /index.html
 ---
-<h1>{{ title }}</h1>
 
-<div>
-Hi, I'm Patrick. blah blah blah here's a fun fact and my GitHub and other links!
-</div>
-<div>
-<mwc-button outlined label="Learn more"></mwc-button>
-</div>
+{{ layoutContent | safe }}
 
 <div class="featured-cards">
     <div class="featured-card">

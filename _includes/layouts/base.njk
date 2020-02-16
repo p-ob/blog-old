@@ -6,15 +6,12 @@
 	<body>
 		<mwc-top-app-bar-fixed id="bar">
 			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
-			<a slot="actionItems" href="{{ '/' | url }}">Talks<a>
-			<a slot="actionItems" href="{{ '/' | url }}">Projects<a>
-			<a slot="actionItems" href="{{ '/' | url }}">Blog<a>
-			<a slot="actionItems" href="{{ '/' | url }}">About<a>
-			<a slot="actionItems" href="{{ '/' | url }}">Contact<a>
+			{%- for nav in collections.nav | sort(attribute="date") -%}
+			<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
+			{%- endfor -%}
 			<main>
 				{{ layoutContent | safe }}
 			</main>
-
 			{% include "components/footer.njk" %}
 		</mwc-top-app-bar-fixed>
 

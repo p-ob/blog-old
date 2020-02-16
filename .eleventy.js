@@ -51,6 +51,18 @@ module.exports = function(eleventyConfig) {
     });
   });
 
+  eleventyConfig.addCollection("talks", function(collection) {
+    return collection.getAllSorted().filter(function(item) {
+      return item.inputPath.match(/^\.\/talks\//) !== null;
+    });
+  });
+
+  eleventyConfig.addCollection("projects", function(collection) {
+    return collection.getAllSorted().filter(function(item) {
+      return item.inputPath.match(/^\.\/projects\//) !== null;
+    });
+  });
+
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");
   eleventyConfig.addPassthroughCopy("static/img");
@@ -70,8 +82,9 @@ module.exports = function(eleventyConfig) {
     permalink: false
   };
 
-  eleventyConfig.setLibrary("md", markdownIt(options)
-    .use(markdownItAnchor, opts)
+  eleventyConfig.setLibrary(
+    "md",
+    markdownIt(options).use(markdownItAnchor, opts)
   );
 
   return {
