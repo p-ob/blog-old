@@ -5,8 +5,12 @@ permalink: /index.html
 ---
 {{ layoutContent | safe }}
 
+{% set talks = collections.talks | reverse %}
+{% set posts = collections.posts | reverse %}
+{% set projects = collections.projects | reverse %}
+
 <div class="featured-cards">
-    {%- for talk in collections.talks.slice(0, 1) -%}
+    {%- for talk in talks.slice(0, 1) -%}
     <div class="featured-card">
         <div class="accent"></div>
         <div class="contents">
@@ -19,7 +23,7 @@ permalink: /index.html
         <a href="{{ talk.url | url }}"><mwc-button outlined class="details" label="View details"></mwc-button></a>
     </div>
     {%- endfor -%}
-    {%- for project in collections.projects.slice(0, 1) -%}
+    {%- for project in projects.slice(0, 1) -%}
     <div class="featured-card">
         <div class="accent"></div>
         <div class="contents">
@@ -32,7 +36,7 @@ permalink: /index.html
         <a href="{{ project.url | url }}"><mwc-button outlined class="details" label="View details"></mwc-button></a>
     </div>
     {%- endfor -%}
-    {%- for post in collections.posts.slice(0, 1) -%}
+    {%- for post in posts.slice(0, 1) -%}
     <div class="featured-card">
         <div class="accent"></div>
         <div class="contents">
