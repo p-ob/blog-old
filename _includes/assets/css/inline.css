@@ -2,12 +2,11 @@
 
 :root {
   /* OG background #121212 */
-  --primary-color: #69F0AE;
-  --secondary-color: #18FFFF;
+  --primary-color: #69f0ae;
+  --secondary-color: #18ffff;
 
   --app-color: #232323;
   --mdc-theme-on-primary: black;
-
 
   --background-color: #090909;
 }
@@ -17,10 +16,17 @@
 }
 
 mwc-top-app-bar-fixed {
+
   --mdc-theme-primary: var(--app-color);
 }
 
-mwc-top-app-bar-fixed a[slot="actionItems"]{
+section.content {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  min-height: calc(100vh - 64px); /* 64px = height of mwc app bar */
+}
+
+mwc-top-app-bar-fixed a[slot="actionItems"] {
   font-size: 20px;
 }
 
@@ -43,11 +49,13 @@ body {
   color: white;
   padding: 0;
   margin: 0;
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
 }
 
 @supports (font-variation-settings: normal) {
-  body { font-family: 'Fira Code VF', monospace; }
+  body {
+    font-family: "Fira Code VF", monospace;
+  }
 }
 
 body {
@@ -58,7 +66,7 @@ body {
 }
 
 main {
-  /* max-width: 100rem; */
+  padding-bottom: 2em;
 }
 
 p,
@@ -77,8 +85,9 @@ footer {
   padding: 1em;
 }
 
-main {
-  padding-bottom: 2em;
+footer {
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
 
 main :first-child,
@@ -251,27 +260,27 @@ button {
 }
 
 .featured-card:nth-of-type(1n) .accent {
-  background: linear-gradient(to right, #00E676, #12A6B3);
+  background: linear-gradient(to right, #00e676, #12a6b3);
 }
 
 .featured-card:nth-of-type(2n) .accent {
-  background: linear-gradient(to right, #12A6B3, #B31270);
+  background: linear-gradient(to right, #12a6b3, #b31270);
 }
 
 .featured-card:nth-of-type(3n) .accent {
-  background: linear-gradient(to right, #B31270, #E93A49);
+  background: linear-gradient(to right, #b31270, #e93a49);
 }
 
 .featured-card:nth-of-type(1n) .details {
-  --mdc-theme-primary:  #13B4C3;
+  --mdc-theme-primary: #13b4c3;
 }
 
 .featured-card:nth-of-type(2n) .details {
-  --mdc-theme-primary: #F466B9;
+  --mdc-theme-primary: #f466b9;
 }
 
 .featured-card:nth-of-type(3n) .details {
-  --mdc-theme-primary: #F17E88;
+  --mdc-theme-primary: #f17e88;
 }
 
 .featured-card .accent {

@@ -9,10 +9,12 @@
 			{%- for nav in collections.nav | sort(attribute="date") -%}
 			<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
 			{%- endfor -%}
-			<main>
-				{{ layoutContent | safe }}
-			</main>
-			{% include "components/footer.njk" %}
+			<section class="content">
+				<main>
+					{{ layoutContent | safe }}
+				</main>
+				{% include "components/footer.njk" %}
+			</section>
 		</mwc-top-app-bar-fixed>
 	</body>
 </html>
