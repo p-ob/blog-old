@@ -1,25 +1,37 @@
 {
-  "name": "pob-blog",
+  "name": "@pob/blog",
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "lint": "eslint src",
-    "start": "run-p start:**",
-    "start:hugo": "hugo serve -vw",
-    "preview": "run-p preview:**",
-    "preview:hugo": "npm run start:hugo -- -D -F",
-    "prebuild": "rimraf dist",
-    "build": "npm run build:hugo",
-    "build:preview": "npm run build:hugo:preview",
-    "build:hugo": "hugo -v",
-    "build:hugo:preview": "npm run build:hugo -- -D -F"
+    "build": "parcel build mwc-packager.js -d static/js -o mwc-dist.js && eleventy",
+    "watch": "eleventy --watch",
+    "serve": "eleventy --serve",
+    "debug": "set DEBUG=* & eleventy"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p-ob/blog"
+  },
+  "author": {
+    "name": "Patrick O'Brien",
+    "email": "patrick.obrien@pob.dev",
+    "url": "https://blog.pob.dev/"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/p-ob/blog",
   "devDependencies": {
-    "hugo-bin": "^0.46.3",
-    "node-sass": "^4.10.0",
-    "npm-run-all": "^4.1.5"
+    "@11ty/eleventy": "^0.9.0",
+    "luxon": "^1.21.3",
+    "markdown-it": "^10.0.0",
+    "markdown-it-anchor": "^5.2.5",
+    "parcel": "^1.12.4"
   },
-  "hugo-bin": {
-    "buildTags": "extended"
+  "dependencies": {
+    "@material/mwc-button": "^0.13.0",
+    "@material/mwc-dialog": "^0.13.0",
+    "@material/mwc-top-app-bar-fixed": "^0.13.0",
+    "clean-css": "^4.2.1",
+    "html-minifier": "^4.0.0",
+    "uglify-es": "^3.3.9"
   }
 }

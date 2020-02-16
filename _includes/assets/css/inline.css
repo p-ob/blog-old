@@ -1,0 +1,283 @@
+@import url(https://cdn.jsdelivr.net/gh/tonsky/FiraCode@1.207/distr/fira_code.css);
+
+:root {
+  /* OG background #121212 */
+  --primary-color: #69F0AE;
+  --secondary-color: #18FFFF;
+
+  --app-color: #232323;
+  --mdc-theme-on-primary: black;
+
+
+  --background-color: #090909;
+}
+
+* {
+  --mdc-theme-primary: var(--primary-color);
+}
+
+mwc-top-app-bar-fixed {
+  --mdc-theme-primary: var(--app-color);
+}
+
+mwc-top-app-bar-fixed a[slot="actionItems"]{
+  font-size: 20px;
+}
+
+mwc-top-app-bar-fixed a[slot="actionItems"]:not(:last-of-type) {
+  margin-right: 20px;
+}
+
+a {
+  color: white;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  color: white;
+  padding: 0;
+  margin: 0;
+  font-family: 'Fira Code', monospace;
+}
+
+@supports (font-variation-settings: normal) {
+  body { font-family: 'Fira Code VF', monospace; }
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  background-color: #121212;
+}
+
+main {
+  /* max-width: 100rem; */
+}
+
+p,
+pre,
+code {
+  line-height: 1.5;
+}
+
+a[href]:not(:hover) {
+  text-decoration: none;
+}
+
+header,
+main,
+footer {
+  padding: 1em;
+}
+
+main {
+  padding-bottom: 2em;
+}
+
+main :first-child,
+main > article :first-child {
+  margin-top: 0;
+}
+
+pre {
+  font-size: 14px;
+  direction: ltr;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  -moz-tab-size: 2;
+  tab-size: 2;
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+  padding: 1em;
+  margin: 0.5em 0;
+}
+
+/* Header Nav */
+header nav ul {
+  padding: 0;
+  list-style: none;
+}
+
+header nav ul :first-child {
+  margin-left: 0;
+}
+
+header nav li {
+  display: inline-block;
+  margin: 0 0.5em;
+}
+
+header nav li a[href]:not(:hover) {
+  text-decoration: none;
+}
+
+header nav li a[data-current="current item"] {
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* Posts List */
+.posts-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 1rem;
+}
+
+@media screen and (max-width: 720px) {
+  .posts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.post {
+  color: white;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border: 2px solid var(--tertiary-color);
+  border-radius: 4px;
+  padding: 0.5rem;
+  background-color: #303030;
+}
+
+.post:hover,
+.post:focus {
+  background-color: #171717;
+}
+
+.post > a {
+  text-decoration: none;
+  color: white;
+}
+
+.post .tag {
+  color: black;
+  background-color: white;
+}
+
+main > section > article > * {
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+/* Post Tags */
+a[rel="tag"],
+a[rel="tag"]:visited {
+  display: inline-block;
+  vertical-align: text-top;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.625em;
+  padding: 0 0.5em;
+  line-height: 2em;
+  height: 2em;
+  border: 1px solid white;
+  border-radius: 0.25em;
+  text-decoration: none;
+  margin: 0 0.5em 0.5em 0;
+}
+
+a[rel="tag"]:hover {
+  border: 1px solid white;
+  background-color: white;
+  color: black;
+}
+
+a[rel="tag"]:last-child {
+  margin-right: 0;
+}
+
+/* Contact Form */
+form {
+  display: grid;
+  padding: 2em 0;
+}
+
+form label {
+  display: none;
+}
+
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  font-family: "Avenir", "Avenir Next", sans-serif;
+}
+
+input,
+textarea {
+  border: 1px solid black;
+}
+
+button {
+  border: 1px solid white;
+  background-color: white;
+  color: white;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 768px) {
+  :root {
+    font-size: 1.1rem;
+  }
+}
+
+.featured-cards {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.featured-card {
+  min-width: 500px;
+}
+
+.featured-card .contents {
+  min-height: 500px;
+  background-color: var(--app-color);
+}
+
+.featured-card:nth-of-type(1n) .accent {
+  background: linear-gradient(to right, #00E676, #12A6B3);
+}
+
+.featured-card:nth-of-type(2n) .accent {
+  background: linear-gradient(to right, #12A6B3, #B31270);
+}
+
+.featured-card:nth-of-type(3n) .accent {
+  background: linear-gradient(to right, #B31270, #E93A49);
+}
+
+.featured-card:nth-of-type(1n) .details {
+  --mdc-theme-primary:  #13B4C3;
+}
+
+.featured-card:nth-of-type(2n) .details {
+  --mdc-theme-primary: #F466B9;
+}
+
+.featured-card:nth-of-type(3n) .details {
+  --mdc-theme-primary: #F17E88;
+}
+
+.featured-card .accent {
+  min-height: 2px;
+}
+
+.featured-card .details {
+  --mdc-theme-primary: var(--secondary-color);
+}

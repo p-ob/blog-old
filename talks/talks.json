@@ -1,0 +1,5 @@
+{
+  "layout": "layouts/talk.njk",
+  "permalink": "talks/{{ title | slug }}/index.html",
+  "tags": "talk"
+}
