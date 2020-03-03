@@ -21,9 +21,9 @@
 				<main>
 					{{ layoutContent | safe }}
 				</main>
-				{% include "components/footer.njk" %}
 			</section>
 		</mwc-top-app-bar-fixed>
+		{% include "components/footer.njk" %}
 		<script>
 		const appBar = document.getElementById("bar")
 		const menuDrawer = document.getElementById("menuDrawer");
