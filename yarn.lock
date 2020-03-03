@@ -900,7 +900,7 @@
   resolved "https://registry.yarnpkg.com/@material/feature-targeting/-/feature-targeting-5.0.0-canary.a1a0deb3e.0.tgz#6e3f830877bb27ce9c032a720c4be073da733a0d"
   integrity sha512-TP1vvgH2ydFZwuKT2uWgv9ZC4E00J4qTqpVw1cpH2SiAd8V1dkEC9Kz6q8bY6k/6j+dK0Kl0vqHvjz2AL+2HZw==
 
-"@material/icon-button@=5.0.0-canary.a1a0deb3e.0":
+"@material/icon-button@5.0.0-canary.a1a0deb3e.0", "@material/icon-button@=5.0.0-canary.a1a0deb3e.0":
   version "5.0.0-canary.a1a0deb3e.0"
   resolved "https://registry.yarnpkg.com/@material/icon-button/-/icon-button-5.0.0-canary.a1a0deb3e.0.tgz#0b06f0d3e924dc2d6d178e3c6e2cff571a25949b"
   integrity sha512-g5lN2zVovaF2w4FYJatcmsPVYLO42ZWLWXYzu5EbktbIOxVGp0N+NYOUhb6HKm8/pjPnqn7ZZGoiqC5NCn2JRA==
@@ -1013,6 +1013,17 @@
     lit-html "^1.1.2"
     tslib "^1.10.0"
 
+"@material/mwc-snackbar@^0.13.0":
+  version "0.13.0"
+  resolved "https://registry.yarnpkg.com/@material/mwc-snackbar/-/mwc-snackbar-0.13.0.tgz#12285592c390a335e0344e87c4c67da7d1057122"
+  integrity sha512-DaYJH24tWAJ0Ec1o7gDVb/aZbB8fYlN6BqQBjbeQfiCFjlVCyiNM5VWgaviQAoJ+RnDK8pOzGXt3Ud6pCU5mLA==
+  dependencies:
+    "@material/mwc-base" "^0.13.0"
+    "@material/snackbar" "=5.0.0-canary.a1a0deb3e.0"
+    lit-element "^2.2.1"
+    lit-html "^1.1.2"
+    tslib "^1.10.0"
+
 "@material/mwc-top-app-bar-fixed@^0.13.0":
   version "0.13.0"
   resolved "https://registry.yarnpkg.com/@material/mwc-top-app-bar-fixed/-/mwc-top-app-bar-fixed-0.13.0.tgz#ed5f29ba0384d1ad7a854ffef8f8034f342a525b"
@@ -1059,6 +1070,25 @@
   dependencies:
     "@material/feature-targeting" "5.0.0-canary.a1a0deb3e.0"
     "@material/rtl" "5.0.0-canary.a1a0deb3e.0"
+
+"@material/snackbar@=5.0.0-canary.a1a0deb3e.0":
+  version "5.0.0-canary.a1a0deb3e.0"
+  resolved "https://registry.yarnpkg.com/@material/snackbar/-/snackbar-5.0.0-canary.a1a0deb3e.0.tgz#1805eb0d72bc4116d022099f5b8f188ce0e44d05"
+  integrity sha512-BOZRVlEol6Q3GeKu6KS9l8YmtJZgz4ej3KpwU0JaMnC5e6I8g/KTabL+aZXTAt9StMIgNPVNlcxKfKsCosTL/w==
+  dependencies:
+    "@material/animation" "5.0.0-canary.a1a0deb3e.0"
+    "@material/base" "5.0.0-canary.a1a0deb3e.0"
+    "@material/button" "5.0.0-canary.a1a0deb3e.0"
+    "@material/dom" "5.0.0-canary.a1a0deb3e.0"
+    "@material/elevation" "5.0.0-canary.a1a0deb3e.0"
+    "@material/feature-targeting" "5.0.0-canary.a1a0deb3e.0"
+    "@material/icon-button" "5.0.0-canary.a1a0deb3e.0"
+    "@material/ripple" "5.0.0-canary.a1a0deb3e.0"
+    "@material/rtl" "5.0.0-canary.a1a0deb3e.0"
+    "@material/shape" "5.0.0-canary.a1a0deb3e.0"
+    "@material/theme" "5.0.0-canary.a1a0deb3e.0"
+    "@material/typography" "5.0.0-canary.a1a0deb3e.0"
+    tslib "^1.9.3"
 
 "@material/theme@5.0.0-canary.a1a0deb3e.0":
   version "5.0.0-canary.a1a0deb3e.0"

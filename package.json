@@ -33,6 +33,7 @@
     "@material/mwc-dialog": "^0.13.0",
     "@material/mwc-drawer": "^0.13.0",
     "@material/mwc-icon-button": "^0.13.0",
+    "@material/mwc-snackbar": "^0.13.0",
     "@material/mwc-top-app-bar-fixed": "^0.13.0",
     "clean-css": "^4.2.1",
     "html-minifier": "^4.0.0",

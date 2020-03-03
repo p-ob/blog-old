@@ -24,6 +24,10 @@
 			</section>
 		</mwc-top-app-bar-fixed>
 		{% include "components/footer.njk" %}
+		<div class="subgrid-canary"></div>
+		<mwc-snackbar id="cssSubgridNotice" labelText="Your browser doesn't support `CSS Subgrid`. Some styles might be broken.">
+			<mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
+		</mwc-snackbar>
 		<script>
 		const appBar = document.getElementById("bar")
 		const menuDrawer = document.getElementById("menuDrawer");
@@ -32,6 +36,16 @@
 			menuDrawer.open = !menuDrawer.open;
 		});
 		}
+		window.customElements.whenDefined("mwc-snackbar").then(() => {
+			const subgridCanary = document.querySelector(".subgrid-canary");
+			if (subgridCanary && getComputedStyle(subgridCanary, null).display !== "none") {
+				const msg = document.getElementById("cssSubgridNotice");
+				if (msg) {
+					msg.open();
+				}
+			}
+		});
+
 		</script>
 	</body>
 </html>
