@@ -3,8 +3,9 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
+    "sw": "node wb.build.mjs",
     "parcel": "parcel build mwc-packager.js -d static/js -o mwc-dist.js",
-    "build": "yarn run parcel && eleventy && node wb.build.mjs",
+    "build": "yarn run parcel && eleventy && yarn run sw",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "debug": "set DEBUG=* & eleventy"

@@ -256,12 +256,6 @@ button {
   }
 }
 
-@supports (grid-template-rows: subgrid) {
-  .subgrid-canary {
-    display: none;
-  }
-}
-
 .post-card {
   display: grid;
   grid-row: span 5;
