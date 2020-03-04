@@ -28,36 +28,16 @@
 			if ('serviceWorker' in navigator) {
 				// Use the window load event to keep the page load performant
 				window.addEventListener('load', () => {
-          if (window.BroadcastChannel) {
-            const stripString = (input, strip) => {
-              if(input.endsWith(strip)) {
-                return input.substring(0, input.length - strip.length);
-              }
-
-              return input;
-            };
-
-            const noAction = (url) => url;
-            const stripHtml = (url) => stripString(url, '.html');
-            const stripIndex = (url) => stripString(url, 'index');
-
-            const mutations = [noAction, stripHtml, stripIndex];
-
-            const updateChannel = new window.BroadcastChannel('precache-updates');
-            updateChannel.addEventListener('message', (event) => {
-              let updatedUrl = event.data.payload.updatedUrl;
-              mutations.forEach((mutationfunc) => {
-                updatedUrl = mutationfunc(updatedUrl);
-                if (updatedUrl === location.href) {
-                  const swUpdates = document.getElementById("swUpdates");
-		              if (swUpdates) {
-                    swUpdates.show();
-                  }
-                }
-              });
-            });
-          }
 					navigator.serviceWorker.register('/service-worker.js');
+          navigator.serviceWorker.addEventListener('message', async (event) => {
+            // Optional: ensure the message came from workbox-broadcast-update
+            if (event.data.meta === 'workbox-broadcast-update') {
+              const swUpdates = document.getElementById("swUpdates");
+              if (swUpdates) {
+                swUpdates.show();
+              }
+            }
+          });
 				});
 			}
   </script>
