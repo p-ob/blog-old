@@ -66,8 +66,7 @@ module.exports = function(eleventyConfig) {
 
   // Don't process folders with static assets e.g. images
   eleventyConfig.addPassthroughCopy("favicon.ico");
-  eleventyConfig.addPassthroughCopy("static/img");
-  eleventyConfig.addPassthroughCopy("static/js");
+  eleventyConfig.addPassthroughCopy("static/");
   eleventyConfig.addPassthroughCopy("admin");
   eleventyConfig.addPassthroughCopy("_includes/assets/");
 
@@ -88,7 +87,9 @@ module.exports = function(eleventyConfig) {
     markdownIt(options).use(markdownItAnchor, opts)
   );
 
-  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(syntaxHighlight, {
+    alwaysWrapLineHighlights: false
+  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],

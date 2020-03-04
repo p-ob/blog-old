@@ -3,7 +3,7 @@
 
 	{% include "components/head.njk" %}
 
-	<body>
+	<body class="line-numbers">
 		<mwc-top-app-bar-fixed id="bar">
 			<mwc-icon-button id="menuButton" icon="menu" slot="navigationIcon"></mwc-icon-button>
 			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
@@ -17,7 +17,6 @@
 				</div>
 				{%- endfor -%}
 			</mwc-drawer>
-			<section class="content">
 				<main>
 					{{ layoutContent | safe }}
 				</main>

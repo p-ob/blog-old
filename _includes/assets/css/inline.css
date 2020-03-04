@@ -32,7 +32,7 @@ mwc-top-app-bar-fixed {
   }
 }
 
-mwc-top-app-bar-fixed a[slot="actionItems"] section.content {
+mwc-top-app-bar-fixed a[slot="actionItems"] main {
   display: grid;
   grid-template-rows: 1fr auto;
   min-height: calc(100vh - 64px); /* 64px = height of mwc app bar */
@@ -85,12 +85,6 @@ main {
   padding-bottom: 2em;
 }
 
-p,
-pre,
-code {
-  line-height: 1.5;
-}
-
 a[href]:not(:hover) {
   text-decoration: none;
 }
@@ -109,23 +103,6 @@ footer {
 main :first-child,
 main > article :first-child {
   margin-top: 0;
-}
-
-pre {
-  font-size: 0.9rem;
-  direction: ltr;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  -moz-tab-size: 2;
-  tab-size: 2;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
-  padding: 1em;
-  margin: 0.5em 0;
 }
 
 /* Header Nav */
@@ -191,7 +168,11 @@ header nav li a[data-current="current item"] {
   background-color: white;
 }
 
-main > section > article > * {
+main > article {
+  max-width: 75rem;
+}
+
+main > article > * {
   margin-top: 0;
   margin-bottom: 0.5em;
 }

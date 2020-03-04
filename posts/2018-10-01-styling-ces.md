@@ -10,7 +10,7 @@ tags:
 summary: "Custom CSS properties + Shadow DOM = <3"
 ---
 
-<script src="/static/js/2018-10-01-styling-ces/ces.js"></script>
+<script src="{{ static/js/2018-10-01-styling-ces/ces.js | url }}"></script>
 
 In a previous post, I laid out some of the basics of custom elements. If you didn't get a chance to read it and don't really understand custom elements, I'd recommend checking it out first before continuing on: [Making the Case for Custom Elements]({{< ref "./2018-09-04-ces.md" >}}). It's a quick read, and helps set the foundation for this post.
 
@@ -28,8 +28,10 @@ _You can skip this if you already know some of the basics of custom elements_
 
 First, let's set up our custom element, `<foo-bar>`.
 
-```javascript
-const template = document.createElement("template");
+<!-- Markdown Template -->
+
+```js
+const template = document.createElement("template");  
 template.innerHTML = `
     <style>
       :host {
@@ -67,6 +69,8 @@ customElements.define("foo-bar", FooBarElement);
 
 Now, this is a pretty basic element. And rather ugly at that. I want it to have a background color! And I want the text to be a different color. And what sick freak uses Comic Sans?! That has GOT to go.
 
+<!-- Markdown Template -->
+
 ```css
 <style>
     foo-bar {
@@ -96,6 +100,8 @@ But never fear, custom CSS properties are here!
 
 First, an example:
 
+<!-- Markdown Template -->
+
 ```css
 :host {
   /* ... */
@@ -108,6 +114,8 @@ Say hello to `var()`! With this new addition to the CSS spec, you can now define
 In the above snippet, we're using our handy-dandy `:host { }` selector to define our border-color, but this time, instead of just setting it to `hotpink`, we're supporting a CSS property of `--foo-bar-border-color`. Now, if a consumer defines this property, our custom element will use that value. If it's not defined, however, we'll fallback to `hotpink`.
 
 So what does this look like if we want to define it?
+
+<!-- Markdown Template -->
 
 ```html
 <head>
@@ -129,7 +137,9 @@ Now, I know what you're thinking. This is a pretty contrived example; we could h
 
 Without further ado, here's what our example would look like if we had some semblance of sanity and wanted to allow something other than Comic Sans:
 
-```javascript
+<!-- Markdown Template -->
+
+```js
 const template = document.createElement("template");
 template.innerHTML = `<style>
   :host {
@@ -158,6 +168,8 @@ class FooBarElement extends HTMLElement {
 
 customElements.define("foo-bar", FooBarElement);
 ```
+
+<!-- Markdown Template -->
 
 ```html
 <style>
@@ -195,6 +207,8 @@ The final part of this post is to help you style your custom elements when used 
 
 Introducing `::slotted()`. With this bad boy, we can now target an element that is passed in to the slot of the element. This is a selector, and requires the parentheses. Inside those parentheses, you can pass any selector you want, but you can ONLY select a parent level element in the slot. Once you get to a child element, the custom element can no longer see it. So `::slotted(div)` will match our above examples perfectly; `::slotted(button)`, however, will not match the button in the following HTML:
 
+<!-- Markdown Template -->
+
 ```html
 <foo-bar>
   <div>
@@ -206,7 +220,9 @@ Introducing `::slotted()`. With this bad boy, we can now target an element that 
 
 And, here's our final demo:
 
-```javascript
+<!-- Markdown Template -->
+
+```js
 const template = document.createElement("template");
 template.innerHTML =
   '<style>:host{display:inline-block;margin:0 auto;box-shadow:0 0 10px rgba(128,100,38,.34);border-radius:8px;border:2px dashed;border-color:hotpink}span{color:black;font-family:var(--foo-bar-span-font,"Comic Sans MS",cursive,sans-serif)}::slotted(p){background-color:purple;color:white!important}</style><span>Hello,world!</span><slot></slot>';
