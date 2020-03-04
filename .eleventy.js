@@ -2,7 +2,6 @@ const { DateTime } = require("luxon");
 const CleanCSS = require("clean-css");
 const UglifyJS = require("uglify-es");
 const htmlmin = require("html-minifier");
-const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
@@ -24,7 +23,7 @@ module.exports = function(eleventyConfig) {
 
   // Minify JS
   eleventyConfig.addFilter("jsmin", function(code) {
-    let minified = UglifyJS.minify(code);
+    const minified = UglifyJS.minify(code);
     if (minified.error) {
       console.log("UglifyJS error: ", minified.error);
       return code;
@@ -35,7 +34,7 @@ module.exports = function(eleventyConfig) {
   // Minify HTML output
   eleventyConfig.addTransform("htmlmin", function(content, outputPath) {
     if (outputPath.indexOf(".html") > -1) {
-      let minified = htmlmin.minify(content, {
+      const minified = htmlmin.minify(content, {
         useShortDoctype: true,
         removeComments: true,
         collapseWhitespace: true
@@ -71,14 +70,14 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("_includes/assets/");
 
   /* Markdown Plugins */
-  let markdownIt = require("markdown-it");
-  let markdownItAnchor = require("markdown-it-anchor");
-  let options = {
+  const markdownIt = require("markdown-it");
+  const markdownItAnchor = require("markdown-it-anchor");
+  const options = {
     html: true,
     breaks: true,
     linkify: true
   };
-  let opts = {
+  const opts = {
     permalink: false
   };
 
@@ -86,10 +85,6 @@ module.exports = function(eleventyConfig) {
     "md",
     markdownIt(options).use(markdownItAnchor, opts)
   );
-
-  eleventyConfig.addPlugin(syntaxHighlight, {
-    alwaysWrapLineHighlights: false
-  });
 
   return {
     templateFormats: ["md", "njk", "html", "liquid"],
