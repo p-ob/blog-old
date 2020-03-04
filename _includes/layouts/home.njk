@@ -9,9 +9,9 @@ permalink: /index.html
 {% set posts = collections.posts | reverse %}
 {% set projects = collections.projects | reverse %}
 
-<div class="featured-cards">
+<div class="post-cards">
     {%- for talk in talks.slice(0, 1) -%}
-    <div class="featured-card">
+    <div class="post-card talk">
         <div class="accent"></div>
         <h2>{{ talk.data.title }}</h2>
         <time datetime="{{ talk.date | machineDate }}">
@@ -22,7 +22,7 @@ permalink: /index.html
     </div>
     {%- endfor -%}
     {%- for project in projects.slice(0, 1) -%}
-    <div class="featured-card">
+    <div class="post-card project">
         <div class="accent"></div>
         <h2>{{ project.data.title }}</h2>
         <time datetime="{{ project.date | machineDate }}">
@@ -33,7 +33,7 @@ permalink: /index.html
     </div>
     {%- endfor -%}
     {%- for post in posts.slice(0, 1) -%}
-    <div class="featured-card">
+    <div class="post-card blog">
         <div class="accent"></div>
         <h2>{{ post.data.title }}</h2>
         <time datetime="{{ post.date | machineDate }}">
