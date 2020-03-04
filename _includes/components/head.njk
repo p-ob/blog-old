@@ -27,16 +27,13 @@
 			// Check that service workers are supported
 			if ('serviceWorker' in navigator) {
 				// Use the window load event to keep the page load performant
-				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('/service-worker.js');
-          navigator.serviceWorker.addEventListener('message', async (event) => {
-            // Optional: ensure the message came from workbox-broadcast-update
-            if (event.data.meta === 'workbox-broadcast-update') {
-              const swUpdates = document.getElementById("swUpdates");
+				window.addEventListener('load', async () => {
+					const registration = await navigator.serviceWorker.register('/service-worker.js');
+          registration.addEventListener('updatefound', () => {
+            const swUpdates = document.getElementById("swUpdates");
               if (swUpdates) {
-                swUpdates.show();
+                swUpdates.open();
               }
-            }
           });
 				});
 			}
