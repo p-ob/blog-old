@@ -2,7 +2,7 @@
   "name": "POB Blog",
   "short_name": "POB",
   "theme_color": "#69f0ae",
-  "background-color": "#090909",
+  "background_color": "#090909",
   "display": "standalone",
   "start_url": "/",
   "icons": [
