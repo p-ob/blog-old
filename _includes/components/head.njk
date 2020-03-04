@@ -1,7 +1,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="/static/manifest.webmanifest">
+  <link rel="manifest" href="/manifest.webmanifest">
   <title>{{ title or renderData.title or metadata.title }}</title>
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
@@ -27,7 +27,7 @@
 			if ('serviceWorker' in navigator) {
 				// Use the window load event to keep the page load performant
 				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('/static/js/service-worker.js');
+					navigator.serviceWorker.register('/service-worker.js');
 				});
 			}
   </script>
