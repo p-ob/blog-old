@@ -4,7 +4,7 @@
   "version": "1.0.0",
   "scripts": {
     "parcel": "parcel build mwc-packager.js -d static/js -o mwc-dist.js",
-    "build": "yarn run parcel && eleventy",
+    "build": "yarn run parcel && eleventy && node wb.build.mjs",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
     "debug": "set DEBUG=* & eleventy"
@@ -25,7 +25,8 @@
     "luxon": "^1.21.3",
     "markdown-it": "^10.0.0",
     "markdown-it-anchor": "^5.2.5",
-    "parcel": "^1.12.4"
+    "parcel": "^1.12.4",
+    "workbox-build": "^5.0.0"
   },
   "dependencies": {
     "@material/mwc-button": "^0.13.0",
