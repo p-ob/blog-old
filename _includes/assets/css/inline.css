@@ -8,7 +8,7 @@
   --app-color: #232323;
   --mdc-theme-on-primary: white;
 
-  --background-color: #090909;
+  --background-color: #121212;
   font-size: 16px;
 }
 
@@ -78,7 +78,7 @@ body {
   display: grid;
   height: 100vh;
   grid-template-rows: 1fr auto;
-  background-color: #121212;
+  background-color: var(--background-color);
 }
 
 main {
