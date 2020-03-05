@@ -4,6 +4,10 @@ date: 2020-03-05T15:08:09.885Z
 summary: 'Going from a blogging CMS to my own JAMStack with Eleventy, Netlify, and more.'
 tags:
   - post
+  - netlify
+  - eleventy
+  - JAM Stack
+  - web apis
 ---
 A few years ago, I set out to create a blog for myself. After researching various CMSes, I stumbled on [Ghost](https://ghost.org/), a pretty great, developer friendly CMS. I found a prebuilt theme, dropped it in the system, and started writing. 
 
