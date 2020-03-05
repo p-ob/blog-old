@@ -17,6 +17,8 @@ With this realization, in the holidays of 2019, I set out to build a site from s
 
 ## The Generator
 
+I've dabbled in a handful of static site generators, mostly Hugo and some Gridsome (but explored a large number for a company project I was assigned). 
+
 ## The Deployment and CMS Platform
 
 ## The UI Components
