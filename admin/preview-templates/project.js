@@ -22,7 +22,6 @@ const Talk = createClass({
                   )
                 }</time
               >
-              ${" by Author"}
             </small>
           </p>
 
