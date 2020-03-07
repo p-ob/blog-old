@@ -3,7 +3,39 @@ layout: layouts/base.njk
 section: home
 permalink: /index.html
 ---
-{{ layoutContent | safe }}
+
+{% set featured = collections.featured %}
+<div class="featured-grid">
+{%- for featuredItem in featured.slice(0, 1) -%}
+        <div class="featured-grid-item">
+            <h2>{{ featuredItem.data.title }}</h2>
+            <div style="display: flex; justify-content: space-between;">
+                <div>
+                    <time datetime="{{ featuredItem.date | machineDate }}">
+                        <small>{{ featuredItem.date | readableDate }}</small>
+                    </time>
+                    <p>{{ featuredItem.data.summary }}</p>
+                </div>
+                <object style="width: 15rem;" data="static/img/CoffeeDoddle.svg" type="image/svg+xml"></object>
+            </div>
+            <div>
+                <a class="link" href="{{ featuredItem.url | url }}">
+                    <mwc-button outlined class="details" label="Read more"></mwc-button>
+                </a>
+            </div>
+        </div>
+    {%- endfor -%}
+    <div class="featured-grid-item">
+        <h2>Bio</h2>
+        <div style="display: flex; justify-content: space-between;">
+            <p>My name is Patrick O'Brien, and I'm a software engineer with a passion for front end architecture. I have experience in building and maintaining front end ecosystems to enable rapid and scalable development.</p>
+            <object style="width: 15rem;" data="static/img/DoogieDoodle.svg" type="image/svg+xml"></object>
+        </div>
+        <div>
+            <a class="link" href="/about"><mwc-button outlined label="Learn more"></mwc-button></a>
+        </div>
+    </div>
+</div>
 
 {% set talks = collections.talks | reverse %}
 {% set posts = collections.posts | reverse %}
@@ -18,7 +50,7 @@ permalink: /index.html
             </time>
             <p>{{ talk.data.summary }}</p>
             <a href="{{ talk.url | url }}">
-                <mwc-button outlined class="details" label="View details"></mwc-button>
+                <mwc-button outlined class="details" label="Read more"></mwc-button>
             </a>
         </div>
     {%- endfor -%}
@@ -31,7 +63,7 @@ permalink: /index.html
             </time>
             <p>{{ project.data.summary }}</p>
             <a href="{{ project.url | url }}">
-                <mwc-button outlined class="details" label="View details"></mwc-button>
+                <mwc-button outlined class="details" label="Read more"></mwc-button>
             </a>
         </div>
     {%- endfor -%}

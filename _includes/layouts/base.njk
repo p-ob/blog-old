@@ -5,7 +5,7 @@
 
 	<body class="line-numbers">
 		<mwc-top-app-bar-fixed id="bar">
-			<mwc-icon-button id="menubutton" icon="menu" slot="navigationicon"></mwc-icon-button>
+			<mwc-icon-button id="menuButton" icon="menu" slot="navigationIcon"></mwc-icon-button>
 			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
 			{%- for nav in collections.nav | sort(attribute="date") -%}
 				<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>

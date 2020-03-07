@@ -7,6 +7,7 @@ tags:
   - post
   - webcomponents
   - frontend
+  - featured
 summary: "Custom CSS properties + Shadow DOM = <3"
 ---
 

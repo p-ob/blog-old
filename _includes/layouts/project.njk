@@ -16,7 +16,7 @@ section: project
   {% if tags %}
     <p>
       {% for tag in tags %}
-        {%- if tag != "project" -%}
+        {%- if tag != "project" and tag != "featured" -%}
           {% set tagUrl %}/tags/{{ tag }}/{% endset %}
           <a href="{{ tagUrl | url }}" rel="tag">{{ tag }}</a>
         {%- endif -%}
