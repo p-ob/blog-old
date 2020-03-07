@@ -10,36 +10,42 @@ permalink: /index.html
 {% set projects = collections.projects | reverse %}
 <div class="post-cards">
     {%- for talk in talks.slice(0, 1) -%}
-    <div class="post-card talk">
-        <div class="accent"></div>
-        <h2>{{ talk.data.title }}</h2>
-        <time datetime="{{ talk.date | machineDate }}">
-            <small>{{ talk.date | readableDate }}</small>
-        </time>
-        <p>{{ talk.data.summary }}</p>
-        <a href="{{ talk.url | url }}"><mwc-button outlined class="details" label="View details"></mwc-button></a>
-    </div>
+        <div class="post-card talk">
+            <div class="accent"></div>
+            <h2>{{ talk.data.title }}</h2>
+            <time datetime="{{ talk.date | machineDate }}">
+                <small>{{ talk.date | readableDate }}</small>
+            </time>
+            <p>{{ talk.data.summary }}</p>
+            <a href="{{ talk.url | url }}">
+                <mwc-button outlined class="details" label="View details"></mwc-button>
+            </a>
+        </div>
     {%- endfor -%}
     {%- for project in projects.slice(0, 1) -%}
-    <div class="post-card project">
-        <div class="accent"></div>
-        <h2>{{ project.data.title }}</h2>
-        <time datetime="{{ project.date | machineDate }}">
-            <small>{{ project.date | readableDate }}</small>
-        </time>
-        <p>{{ project.data.summary }}</p>
-        <a href="{{ project.url | url }}"><mwc-button outlined class="details" label="View details"></mwc-button></a>
-    </div>
+        <div class="post-card project">
+            <div class="accent"></div>
+            <h2>{{ project.data.title }}</h2>
+            <time datetime="{{ project.date | machineDate }}">
+                <small>{{ project.date | readableDate }}</small>
+            </time>
+            <p>{{ project.data.summary }}</p>
+            <a href="{{ project.url | url }}">
+                <mwc-button outlined class="details" label="View details"></mwc-button>
+            </a>
+        </div>
     {%- endfor -%}
     {%- for post in posts.slice(0, 1) -%}
-    <div class="post-card blog">
-        <div class="accent"></div>
-        <h2>{{ post.data.title }}</h2>
-        <time datetime="{{ post.date | machineDate }}">
-            <small>{{ post.date | readableDate }}</small>
-        </time>
-        <p>{{ post.data.summary }}</p>
-        <a href="{{ post.url | url }}"><mwc-button outlined class="details" label="Read more"></mwc-button></a>
-    </div>
+        <div class="post-card blog">
+            <div class="accent"></div>
+            <h2>{{ post.data.title }}</h2>
+            <time datetime="{{ post.date | machineDate }}">
+                <small>{{ post.date | readableDate }}</small>
+            </time>
+            <p>{{ post.data.summary }}</p>
+            <a href="{{ post.url | url }}">
+                <mwc-button outlined class="details" label="Read more"></mwc-button>
+            </a>
+        </div>
     {%- endfor -%}
 </div>

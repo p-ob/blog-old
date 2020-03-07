@@ -5,22 +5,21 @@
 
 	<body class="line-numbers">
 		<mwc-top-app-bar-fixed id="bar">
-			<mwc-icon-button id="menuButton" icon="menu" slot="navigationIcon"></mwc-icon-button>
+			<mwc-icon-button id="menubutton" icon="menu" slot="navigationicon"></mwc-icon-button>
 			<a slot="title" href="{{ '/' | url }}">{{ metadata.title }}</a>
 			{%- for nav in collections.nav | sort(attribute="date") -%}
-			<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
+				<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
 			{%- endfor -%}
 			<mwc-drawer id="menuDrawer" type="dismissible">
 				{%- for nav in collections.nav | sort(attribute="date") -%}
-				<div>
-				<a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
-				</div>
+					<div>
+						<a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
+					</div>
 				{%- endfor -%}
 			</mwc-drawer>
-				<main>
-					{{ layoutContent | safe }}
-				</main>
-			</section>
+			<main>
+				{{ layoutContent | safe }}
+			</main>
 		</mwc-top-app-bar-fixed>
 		{% include "components/footer.njk" %}
 		<mwc-snackbar id="swUpdates" labelText="There are new updates available. Please refresh the page.">
@@ -28,17 +27,19 @@
 			<mwc-icon-button icon="close" slot="dismiss"></mwc-icon-button>
 		</mwc-snackbar>
 		<script>
-		const appBar = document.getElementById("bar")
-		const menuDrawer = document.getElementById("menuDrawer");
-		if (appBar && menuDrawer) {
-		appBar.addEventListener("MDCTopAppBar:nav", () => {
-			menuDrawer.open = !menuDrawer.open;
-		});
-		}
-		const swUpdates = document.getElementById("swUpdates");
-		if (swUpdates) {
-			swUpdates.querySelector("[slot='action']").addEventListener("click", () => window.location.reload());
-		}
+			const appBar = document.getElementById("bar")
+			const menuDrawer = document.getElementById("menuDrawer");
+			if (appBar && menuDrawer) {
+				appBar.addEventListener("MDCTopAppBar:nav", () => {
+					menuDrawer.open = !menuDrawer.open;
+				});
+			}
+			const swUpdates = document.getElementById("swUpdates");
+			if (swUpdates) {
+				swUpdates
+					.querySelector("[slot='action']")
+					.addEventListener("click", () => window.location.reload());
+			}
 		</script>
 	</body>
 </html>

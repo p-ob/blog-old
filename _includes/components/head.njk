@@ -6,17 +6,21 @@
   <title>{{ title or renderData.title or metadata.title }}</title>
   <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   {% set css %}
-    {% include "assets/css/inline.css" %}
+  {% include "assets/css/inline.css" %}
   {% endset %}
-  <style>{{ css | cssmin | safe }}</style>
+  <style>
+    {{css | cssmin | safe}}
+  </style>
   {% set js %}
-    {% include "assets/js/inline.js" %}
+  {% include "assets/js/inline.js" %}
   {% endset %}
-  <script>{{ js | jsmin | safe }}</script>
+  <script>
+    {{ js | jsmin | safe }}
+  </script>
   <script src="/static/js/mwc-dist.js" async></script>
   <link href="https://fonts.googleapis.com/css?family=Material+Icons&display=block" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-tomorrow.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/themes/prism-tomorrow.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.css"/>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/prism.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-javascript.min.js"></script>
@@ -24,18 +28,20 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-css.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.19.0/components/prism-csharp.min.js"></script>
   <script>
-			// Check that service workers are supported
-			if ('serviceWorker' in navigator) {
-				// Use the window load event to keep the page load performant
-				window.addEventListener('load', async () => {
-					const registration = await navigator.serviceWorker.register('/service-worker.js');
-          registration.addEventListener('updatefound', () => {
-            const swUpdates = document.getElementById("swUpdates");
-              if (swUpdates) {
-                swUpdates.open();
-              }
-          });
-				});
-			}
+    // Check that service workers are supported
+    if ('serviceWorker' in navigator) {
+      // Use the window load event to keep the page load performant
+      window.addEventListener('load', async () => {
+        const registration = await navigator
+          .serviceWorker
+          .register('/service-worker.js');
+        registration.addEventListener('updatefound', () => {
+          const swUpdates = document.getElementById("swUpdates");
+          if (swUpdates) {
+            swUpdates.open();
+          }
+        });
+      });
+    }
   </script>
 </head>
