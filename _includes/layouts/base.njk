@@ -10,13 +10,13 @@
 			{%- for nav in collections.nav | sort(attribute="date") -%}
 				<a slot="actionItems" href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
 			{%- endfor -%}
-			<mwc-drawer id="menuDrawer" type="dismissible">
+			{# <mwc-drawer id="menuDrawer" type="dismissible">
 				{%- for nav in collections.nav | sort(attribute="date") -%}
 					<div>
 						<a href="{{ nav.url | url }}"{% if nav.url == page.url %} data-current="current item"{% endif %}>{{ nav.data.navtitle }}</a>
 					</div>
 				{%- endfor -%}
-			</mwc-drawer>
+			</mwc-drawer> #}
 			<main>
 				{{ layoutContent | safe }}
 			</main>

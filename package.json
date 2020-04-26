@@ -3,8 +3,8 @@
   "private": true,
   "version": "1.0.0",
   "scripts": {
-    "sw": "node wb.build.mjs",
-    "parcel": "parcel build mwc-packager.js -d static/js -o mwc-dist.js",
+    "sw": "yarn node wb.build.js",
+    "parcel": "parcel build mwc-packager.js --dist-dir static/js",
     "build": "yarn run parcel && eleventy && yarn run sw",
     "watch": "eleventy --watch",
     "serve": "eleventy --serve",
@@ -23,24 +23,28 @@
   "homepage": "https://github.com/p-ob/blog",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "luxon": "^1.21.3",
+    "@babel/core": "^7.0.0",
+    "@yarnpkg/pnpify": "^2.0.0-rc.21",
+    "clean-css": "^4.2.3",
+    "html-minifier": "^4.0.0",
     "markdown-it": "^10.0.0",
-    "markdown-it-anchor": "^5.2.5",
-    "parcel": "^1.12.4",
-    "workbox-build": "^5.0.0"
+    "markdown-it-anchor": "^5.2.7",
+    "parcel": "nightly",
+    "uglify-es": "^3.3.9",
+    "workbox-build": "^5.1.3"
   },
   "dependencies": {
-    "@material/mwc-button": "^0.13.0",
-    "@material/mwc-dialog": "^0.13.0",
-    "@material/mwc-drawer": "^0.13.0",
-    "@material/mwc-icon-button": "^0.13.0",
-    "@material/mwc-snackbar": "^0.13.0",
-    "@material/mwc-top-app-bar-fixed": "^0.13.0",
-    "clean-css": "^4.2.1",
-    "html-minifier": "^4.0.0",
-    "uglify-es": "^3.3.9"
+    "@material/mwc-button": "0.13.0",
+    "@material/mwc-dialog": "0.13.0",
+    "@material/mwc-drawer": "0.13.0",
+    "@material/mwc-icon": "0.13.0",
+    "@material/mwc-icon-button": "0.13.0",
+    "@material/mwc-snackbar": "0.13.0",
+    "@material/mwc-top-app-bar-fixed": "0.13.0",
+    "luxon": "^1.23.0"
   },
   "resolutions": {
-    "set-value": "2.0.1"
+    "minimist": "^0.2.1",
+    "kind-of": "^6.0.3"
   }
 }

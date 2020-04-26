@@ -1,7 +1,8 @@
 _site/
 node_modules/
 package-lock.json
-*-dist.js
+static/js/mwc-packager.js
 *.map
 *.cache
 *.log
+.parcel-cache/

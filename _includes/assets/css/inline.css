@@ -82,7 +82,7 @@ body {
 }
 
 main {
-  padding-bottom: 2em;
+  padding: 4em 0;
 }
 
 a[href]:not(:hover) {
@@ -90,7 +90,6 @@ a[href]:not(:hover) {
 }
 
 header,
-main,
 footer {
   padding: 1em;
 }
